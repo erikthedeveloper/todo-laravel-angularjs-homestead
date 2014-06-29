@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>LocalBites - Front End</title>
+    <title>TheTodoApp - BackEnd</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
 
@@ -11,9 +11,9 @@
 
     <div class="container">
         <div class="jumbotron" style="margin-top: 50px;">
-            <h1>LocalBites <small>front end</small></h1>
+            <h1>TheTodoApp <small>back end</small></h1>
             <p class="lead">
-                Welcome to the LocalBites Homestead/Vagrant environment.
+                Welcome to the TheTodoApp Homestead/Vagrant environment.
                 <br>
                 <strong>Enjoy!</strong>
             </p>
