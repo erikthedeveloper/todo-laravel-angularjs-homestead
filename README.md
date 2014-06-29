@@ -10,3 +10,7 @@ A web app *in the works* that will utilize
 
 ## **Drumroll...*
 Begin development!
+
+Note: see wiki pages for more details and poke around the feature/branches to see what is in the works.
+
+Contributions/feedback welcome.
