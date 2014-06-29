@@ -1,0 +1,26 @@
+---
+ip: "192.168.10.10"
+memory: 2048
+cpus: 1
+
+authorize: /Users/YOURUSERNAME/.ssh/id_rsa.pub
+
+keys:
+    - /Users/YOURUSERNAME/.ssh/id_rsa
+
+folders:
+    # "LocalBites Repo"/App
+    - map: /YOUR/FULL/PATH/suwdc/local-bites-web-app/LocalBites
+      to: /home/vagrant/Mapped/LocalBites
+
+sites:
+    # Be sure to add entry to your hosts file
+    # Example: "192.168.10.10   localbites.dev api.localbites.dev"
+    - map: localbites.dev
+      to: /home/vagrant/Mapped/LocalBites/FrontEnd/public
+    - map: api.localbites.dev
+      to: /home/vagrant/Mapped/LocalBites/LaravelApi/public
+
+variables:
+    - key: APP_ENV
+      value: local
