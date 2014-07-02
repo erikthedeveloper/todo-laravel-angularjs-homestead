@@ -2,6 +2,7 @@
 /vendor
 composer.phar
 # composer.lock # Must track this for production
+_ide_helper.php
 .env.*.php
 .env.php
 .DS_Store
