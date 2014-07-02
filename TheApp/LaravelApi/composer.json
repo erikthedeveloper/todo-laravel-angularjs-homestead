@@ -6,6 +6,11 @@
 	"require": {
 		"laravel/framework": "4.2.*"
 	},
+    "require-dev": {
+        "barryvdh/laravel-ide-helper": "1.*",
+        "way/generators": "2.*",
+        "doctrine/dbal": "~2.3"
+    },
 	"autoload": {
 		"classmap": [
 			"app/commands",
