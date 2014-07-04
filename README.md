@@ -21,6 +21,11 @@ The rundown..
   * FrontEnd: http://my-todo-app.dev/
 * You should be golden!
 
+### Running tests
+
+* From the LaravelApi directory
+    * `vendor/bin/phpspec run`
+
 Note: Feel free to poke around the feature branches, issues, and wiki to see what may or may not be in the works.
 
 Contributions/Feedback welcome.
