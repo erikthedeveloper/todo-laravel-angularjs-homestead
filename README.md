@@ -1,8 +1,6 @@
 Cloned from the similar project over at https://github.com/suwdc
 
-# Yes. Yet, another TODO App... but! ...
-
-... *in the works* that will utilize
+The rundown..
 
 * Laravel 4.2+
 * AngularJS
