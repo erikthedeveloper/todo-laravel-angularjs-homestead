@@ -25,6 +25,13 @@ The rundown..
 
 * From the LaravelApi directory
     * `vendor/bin/phpspec run`
+Or even better
+* Set up an alias or add to path
+* `phpspec run --format=pretty`
+
+Voila! Beautiful documentation-ish test output with PHPSpec:
+
+![1__vagrant_homestead____mapped_theapp_laravelapi__bash_](https://cloud.githubusercontent.com/assets/1240178/3486446/18fa3756-0439-11e4-9d43-61598f2c9bf4.png)
 
 Note: Feel free to poke around the feature branches, issues, and wiki to see what may or may not be in the works.
 
