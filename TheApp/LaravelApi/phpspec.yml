@@ -1,0 +1,10 @@
+extensions:
+    - PhpSpec\Laravel\Extension\LaravelExtension
+laravel_extension:
+    migrate_db: true
+suites:
+    todo_suite:
+        namespace: Todo
+        src_path: app
+        spec_path: app
+        spec_prefix: spec
