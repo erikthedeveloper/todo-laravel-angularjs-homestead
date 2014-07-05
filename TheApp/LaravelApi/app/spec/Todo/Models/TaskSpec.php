@@ -6,7 +6,7 @@ use PhpSpec\Laravel\EloquentModelBehavior;
 
 class TaskSpec extends EloquentModelBehavior {
 
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType('Todo\Models\Task');
     }
