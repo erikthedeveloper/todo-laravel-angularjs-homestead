@@ -1,5 +1,7 @@
 extensions:
     - PhpSpec\Laravel\Extension\LaravelExtension
+laravel_extension:
+    migrate_db: true
 suites:
     todo_suite:
         namespace: Todo
