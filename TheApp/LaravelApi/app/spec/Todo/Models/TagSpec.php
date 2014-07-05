@@ -11,11 +11,8 @@ class TagSpec extends EloquentModelBehavior
         $this->shouldHaveType('Todo\Models\Tag');
     }
 
-    public function it_has_many_tasks() {
-    	$this->tasks()->shouldDefineRelationship('hasMany', 'Todo\Models\Task');
+    public function it_belongs_to_many_tasks() {
+    	$this->tasks()->shouldDefineRelationship('belongsToMany', 'Todo\Models\Task');
     }
 
-    public function it_belongs_to_one_user() {
-    	$this->user()->shouldDefineRelationship('belongsTo', 'Todo\Models\User');
-    }
 }

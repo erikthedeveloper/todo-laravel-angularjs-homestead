@@ -2,14 +2,9 @@
 
 namespace Todo\Models;
 
-class Tag extends BaseModel { 
+class Tag extends BaseModel {
     public function tasks()
     {
-        return $this->hasMany('Todo\Models\Task');
-    }
-
-    public function user()
-    {
-        return $this->belongsTo('Todo\Models\User');
+        return $this->belongsToMany('Todo\Models\Task');
     }
 }
