@@ -1,8 +1,4 @@
-Cloned from the similar project over at https://github.com/suwdc
-
-A change!...
-
-The rundown..
+The rundown...
 
 * Laravel 4.2+
 * AngularJS
