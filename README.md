@@ -21,6 +21,8 @@ The rundown...
 
 ### Running tests
 
+Also: behat
+
 * From the LaravelApi directory
     * `vendor/bin/phpspec run`
 Or even better
