@@ -11,7 +11,17 @@
 |
 */
 
-Route::get('/', function()
+Route::get('/users/', function()
 {
-	return View::make('hello');
+	$users = [
+		['id' => 1, 'name' => 'Kasey Cowley'],
+		['id' => 2, 'name' => 'Erik Aybar'],
+		['id' => 3, 'name' => 'Foo Bar'],
+	];
+
+	return Response::json($users);
+});
+
+Route::get('/users/{id}', function ($id) {
+	return Response::json(['id' => 2, 'name' => 'Erik Aybar']);
 });
