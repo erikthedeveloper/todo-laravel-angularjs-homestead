@@ -4,13 +4,16 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.2.*"
+		"laravel/framework": "4.2.*",
+        "guzzlehttp/guzzle": "~4.0"
 	},
     "require-dev": {
         "barryvdh/laravel-ide-helper": "1.*",
         "way/generators": "2.*",
         "doctrine/dbal": "~2.3",
         "phpspec/phpspec": "~2.0",
+        "behat/behat": "2.*",
+        "phpunit/phpunit": "~3.0",
         "benconstable/phpspec-laravel": "~1.0"
     },
 	"autoload": {

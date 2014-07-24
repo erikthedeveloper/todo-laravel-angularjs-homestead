@@ -1,6 +1,4 @@
-Cloned from the similar project over at https://github.com/suwdc
-
-The rundown..
+The rundown...
 
 * Laravel 4.2+
 * AngularJS
@@ -22,6 +20,8 @@ The rundown..
 * You should be golden!
 
 ### Running tests
+
+Also: behat
 
 * From the LaravelApi directory
     * `vendor/bin/phpspec run`
