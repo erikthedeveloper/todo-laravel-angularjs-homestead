@@ -1,6 +1,6 @@
 <?php
 
-namespace Todo\Models\Controllers;
+namespace Todo\Controllers;
 
 
 use Controller;
@@ -12,7 +12,7 @@ use Redirect;
 
 /**
  * Class BaseApiController
- * @package Todo\Models\Controllers
+ * @package Todo\Controllers
  * @todo Pagination
  */
 abstract class BaseApiController extends Controller {

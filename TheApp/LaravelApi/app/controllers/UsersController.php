@@ -1,6 +1,6 @@
 <?php
 
-use Todo\Models\Controllers\BaseApiController;
+use Todo\Controllers\BaseApiController;
 
 /**
  * Class UsersController
