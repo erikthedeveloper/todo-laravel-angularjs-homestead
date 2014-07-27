@@ -8,7 +8,7 @@
  */
 Route::group(['prefix' => 'users'], function()
 {
-    Route::get(    "/",                   ['as' => 'users.index',          'uses' => 'DummyController@respondOk'] );
+    Route::get(    "/",                   ['as' => 'users.index',          'uses' => 'UsersController@index'] );
     Route::post(   "/",                   ['as' => 'users.store',          'uses' => 'DummyController@respondOk'] );
     Route::get(    "/{user_id}",          ['as' => 'users.show',           'uses' => 'DummyController@respondOk'] );
     Route::patch(  "/{user_id}",          ['as' => 'users.update',         'uses' => 'DummyController@respondOk'] );
