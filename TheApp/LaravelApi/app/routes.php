@@ -9,10 +9,11 @@
 Route::group(['prefix' => 'users'], function()
 {
     Route::get(    "/",                   ['as' => 'users.index',          'uses' => 'UsersController@index'] );
-    Route::post(   "/",                   ['as' => 'users.store',          'uses' => 'DummyController@respondOk'] );
-    Route::get(    "/{user_id}",          ['as' => 'users.show',           'uses' => 'DummyController@respondOk'] );
-    Route::patch(  "/{user_id}",          ['as' => 'users.update',         'uses' => 'DummyController@respondOk'] );
-    Route::delete( "/{user_id}",          ['as' => 'users.destroy',        'uses' => 'DummyController@respondOk'] );
+    Route::post(   "/",                   ['as' => 'users.store',          'uses' => 'UsersController@store'] );
+    Route::get(    "/{user_id}",          ['as' => 'users.show',           'uses' => 'UsersController@show'] );
+    Route::patch(  "/{user_id}",          ['as' => 'users.update',         'uses' => 'UsersController@update'] );
+    Route::put(    "/{user_id}",          ['as' => 'users.update',         'uses' => 'UsersController@update'] );
+    Route::delete( "/{user_id}",          ['as' => 'users.destroy',        'uses' => 'UsersController@destroy'] );
     Route::get(    "/{user_id}/tasks",    ['as' => 'users.tasks.index',    'uses' => 'DummyController@respondOk'] );
     Route::get(    "/{user_id}/comments", ['as' => 'users.comments.index', 'uses' => 'DummyController@respondOk'] );
 });

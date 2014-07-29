@@ -1,50 +1,98 @@
 <?php
 
 use Todo\Controllers\BaseApiController;
+use Todo\Controllers\ResourceControllerInterface;
 
 /**
  * Class UsersController
  */
-class UsersController extends BaseApiController {
+class UsersController
+    extends BaseApiController
+    implements ResourceControllerInterface {
 
     /**
-     * @return \Illuminate\Http\Response
+     * Return a listing of the resource
+     *  Allows for query parameters for search/filtering via the GET parameters
+     * @return \Illuminate\Http\Response|\Illuminate\Http\JsonResponse
      */
     public function index()
     {
+        // @todo handle query strings/searchable_input
+        $searchable_input = $this->getSearchableInput();
         $users = DummyUsers::makeUsers(mt_rand(2, 20));
+        $this->addPaginationInfo($page = mt_rand(1,4), $total = mt_rand(30, 400));
+        $this->setMessage('A message...');
 
-        return $this->respondOk($users->toArray());
+        $this->addData('foo', ['bar' => 'baz']);
+        $this->addData('baz', ['foo', 'bar']);
+        $this->addData('users', $users->toArray());
+        return $this->respondOk();
     }
-
-}
-
-/**
- * Class DummyUsers
- * @TEMP
- * @TODO Extract out to a factory type service...
- */
-class DummyUsers {
 
     /**
-     * @param $num
-     * @return array|\Illuminate\Support\Collection
+     * @return array
      */
-    static function makeUsers($num)
+    public function getSearchableInput()
     {
-        $faker = Faker\Factory::create();
+        // @todo define way of defining searchable input
+        $searchable_input = [
+            'keyword' => 'some search term',
+            'page'    => 2
+        ];
 
-        while ($num-- > 0)
-        {
-            // @todo - Implement some type of Model/Data abstraction (i.e. repositories)
-            $users[] = new \Todo\Models\User([
-                'id'         => mt_rand(1, 100000),
-                'email'      => $faker->email,
-                'first_name' => $faker->firstName,
-                'last_name'  => $faker->lastName
-            ]);
-        }
-        $users = \Illuminate\Support\Collection::make($users);
-        return $users;
+        return $searchable_input;
     }
+
+    /**
+     * Create a new resource
+     *  Requires the correct POST parameters
+     * @return \Illuminate\Http\Response|\Illuminate\Http\JsonResponse
+     */
+    public function store()
+    {
+        // @todo validateStoreInput()
+        // @todo Create resource
+        $created_status = 202;
+        $this->respondOk([], $created_status);
+    }
+
+    /**
+     * Return a single resource
+     * @param $identifier
+     * @return \Illuminate\Http\Response|\Illuminate\Http\JsonResponse
+     */
+    public function show($identifier)
+    {
+        $user = DummyUsers::makeUsers(1)->first()->toArray();
+        $user['id'] = $identifier;
+        return $this->respondOk(compact('user'));
+    }
+
+    /**
+     * Update a single resource
+     * @param $identifier
+     * @return \Illuminate\Http\Response|\Illuminate\Http\JsonResponse
+     */
+    public function update($identifier)
+    {
+        // @todo validateUpdateInput
+        // @todo update resource
+        $user = DummyUsers::makeUsers(1)->first()->toArray();
+        $user['id'] = $identifier;
+        return $this->respondOk(compact('user'));
+    }
+
+    /**
+     * Destroy a single resource
+     * @param $identifier
+     * @return \Illuminate\Http\Response|\Illuminate\Http\JsonResponse
+     */
+    public function destroy($identifier)
+    {
+        // @todo Destroy resource
+        $this->setMessage("Resource destroyed");
+        $status_destroyed = 200; // @todo proper status
+        return $this->respondOk([], 200);
+    }
+
 }

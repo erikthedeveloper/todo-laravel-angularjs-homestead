@@ -50,7 +50,7 @@ abstract class BaseApiController extends Controller {
      * @param int   $status
      * @return \Illuminate\Http\Response
      */
-    public function respondOk(array $data, $status = Response::HTTP_OK)
+    public function respondOk(array $data = [], $status = Response::HTTP_OK)
     {
         return $this->respond($data, $status);
     }
@@ -175,11 +175,40 @@ abstract class BaseApiController extends Controller {
     }
 
     /**
+     * @param $key
+     * @param $value
+     */
+    public function addData($key, $value)
+    {
+        $this->mergeData([$key => $value]);
+    }
+
+    /**
      * @param array $data
      */
     public function mergeData(array $data)
     {
         $this->data = array_merge_recursive($this->getData(), $data);
+    }
+
+    /**
+     * @param int         $page
+     * @param int         $total
+     * @param string|null $next
+     * @param string|null $prev
+     */
+    public function addPaginationInfo($page, $total, $next = null, $prev = null)
+    {
+        $pagination = compact('total', 'page', 'next', 'prev');
+        $this->addData('pagination', $pagination);
+    }
+
+    /**
+     * @param string $message
+     */
+    public function setMessage($message)
+    {
+        $this->mergeData(['message' => $message]);
     }
 
 }
