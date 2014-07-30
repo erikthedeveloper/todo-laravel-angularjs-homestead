@@ -2,8 +2,9 @@
 
 namespace Todo\Models;
 
-class TaskGroup extends BaseModel
-{
+class TaskGroup extends BaseModel {
+
+    protected $fillable = [];
 
     public function tasks()
     {
