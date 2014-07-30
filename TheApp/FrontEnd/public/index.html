@@ -5,11 +5,19 @@
     <title>TheTodoApp - Front End</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.15/angular.js"></script>
-    <script type="text/javascript" src="https://code.angularjs.org/1.3.0-beta.15/angular-resource.js"></script>
+    <script type="text/javascript" src="/dist/js/angular_app.js"></script>
 </head>
-<body>
-    <div class="container" ng-controller="UsersController as User">
+<body ng-controller="UsersController as User">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">Todo App</a>
+            </div>
+            <div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
         <div class="jumbotron" style="margin-top: 50px;">
             <h1>TheTodoApp <small>front end</small></h1>
             <p class="lead">
@@ -24,20 +32,6 @@
                 <a href="#" class="btn btn-lg btn-success">Go!</a>
             </p>
         </div>
-        <div>
-            <p>Our awesome users: (Demonstrates fetching all users from our users route)</p>
-            <ul class="list-group">
-                <li class="list-group-item" ng-repeat="user in User.users">{{ user.id }} - {{ user.name }}</li>
-            </ul>
-
-            <p>Or...Fetching a single user:</p>
-            <ul class="list-group">
-                <li class="list-group-item">{{ User.user.id }} - {{ User.user.name }}</li>
-            </ul>
-        </div>
     </div>
-    <script type="text/javascript" src="/app/app.js"></script>
-    <script type="text/javascript" src="/app/factories/User.js"></script>
-    <script type="text/javascript" src="/app/controllers/UsersController.js"></script>
 </body>
 </html>
