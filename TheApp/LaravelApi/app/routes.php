@@ -18,7 +18,6 @@ Route::group(['prefix' => 'users'], function()
     Route::get(    "/{user_id}/comments", ['as' => 'users.comments.index', 'uses' => 'DummyController@respondOk'] );
 });
 
-
 /**
  * tasks
  *

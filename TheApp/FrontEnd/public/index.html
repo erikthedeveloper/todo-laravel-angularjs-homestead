@@ -1,14 +1,22 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="todoApp">
 <head>
     <meta charset="UTF-8">
     <title>TheTodoApp - Front End</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.15/angular.min.js"></script>
+    <script type="text/javascript" src="/dist/js/angular_app.js"></script>
 </head>
-<body>
-
+<body ng-controller="UsersController as User">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">Todo App</a>
+            </div>
+            <div>
+            </div>
+        </div>
+    </nav>
     <div class="container">
         <div class="jumbotron" style="margin-top: 50px;">
             <h1>TheTodoApp <small>front end</small></h1>
@@ -21,10 +29,9 @@
                 Get started by clicking the button
             </p>
             <p class="text-right">
-                <a href="#" class="btn btn-lg btn-success" onclick="event.preventDefault(); alert('Really?!... You really clicked the button...');">Go!</a>
+                <a href="#" class="btn btn-lg btn-success">Go!</a>
             </p>
         </div>
     </div>
-
 </body>
 </html>

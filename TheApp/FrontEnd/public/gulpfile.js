@@ -9,21 +9,19 @@ var gulp    = require('gulp'),
 
 gulp.task('js', function () {
 	// Lint, minify, concat, rename
-	return gulp.src('app/**/*.js')
-		.pipe(jshint())
-		.pipe(jshint.reporter('default'))
+	return gulp.src(['dist/lib/dev/*.js', 'app/app.js', 'app/factories/*.js', 'app/**/*.js'])
 		.pipe(concat('angular_app.js'))
-		.pipe(gulp.dest('dist/assets/js'))
+		.pipe(gulp.dest('dist/js'))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
-		.pipe(gulp.dest('dist/assets/js'));
+		.pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('css', function () {
 	// Compile from less
 	return gulp.src('less/**/*.less')
 		.pipe(less())
-		.pipe(gulp.dest('dist/assets/css'));
+		.pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('html', function () {
