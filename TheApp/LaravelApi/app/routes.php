@@ -1,5 +1,10 @@
 <?php
 
+Route::group(['prefix' => 'testing'], function()
+{
+    Route::get("/", ['as' => 'testing.index', 'uses' => 'TestingController@index']);
+});
+
 /**
  * users
  *
