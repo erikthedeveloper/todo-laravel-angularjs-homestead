@@ -12,7 +12,7 @@
         "way/generators": "2.*",
         "doctrine/dbal": "~2.3",
         "phpspec/phpspec": "~2.0",
-        "behat/behat": "2.*",
+        "behat/behat": "~3.0",
         "phpunit/phpunit": "~3.0",
         "benconstable/phpspec-laravel": "~1.0",
 		"fzaninotto/faker": "1.5.x-dev"
