@@ -3,6 +3,8 @@
 Route::group(['prefix' => 'testing'], function()
 {
     Route::get("/", ['as' => 'testing.index', 'uses' => 'TestingController@index']);
+    Route::get("echo",  ['uses' => 'TestingController@echo_get']);
+    Route::post("echo", ['uses' => 'TestingController@echo_post']);
 });
 
 /**
