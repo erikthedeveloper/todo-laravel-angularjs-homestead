@@ -28,6 +28,11 @@ class FunctionalFeatureContext implements Context, SnippetAcceptingContext
     protected $response;
 
     /**
+     * @var array
+     */
+    protected $request_data = [];
+
+    /**
      * Initializes context.
      *
      * Every scenario gets its own context instance.
@@ -40,11 +45,35 @@ class FunctionalFeatureContext implements Context, SnippetAcceptingContext
     }
 
     /**
+     * @Given I have some data to send:
+     */
+    public function iHaveSomeDataToSend(TableNode $table)
+    {
+        $data = $table->getRowsHash();
+        $this->request_data = $data;
+    }
+
+    /**
      * @When I send a GET request to :uri
      */
     public function iSendAGetRequestTo($uri)
     {
-        $response = $this->client->get($uri);
+        $data = [
+            'query' => $this->request_data
+        ];
+        $response = $this->client->get($uri, $data);
+        $this->response = $response;
+    }
+
+    /**
+     * @When I send a POST request to :uri
+     */
+    public function iSendAPostRequestTo($uri)
+    {
+        $data = [
+            'body' => $this->request_data
+        ];
+        $response = $this->client->post($uri, $data);
         $this->response = $response;
     }
 
@@ -79,5 +108,14 @@ class FunctionalFeatureContext implements Context, SnippetAcceptingContext
     {
         $response_data = $this->response->json();
         assertContains($contain_value, $response_data[$field_name]);
+    }
+
+    /**
+     * @When the response entry :field_name should be :contain_value
+     */
+    public function theResponseEntryShouldBe($field_name, $contain_value)
+    {
+        $response_data = $this->response->json();
+        assertEquals($contain_value, $response_data[$field_name]);
     }
 }
